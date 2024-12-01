@@ -5,6 +5,9 @@ mlruns
 *.pth
 catboost_info
 
+.RData
+.Rhistory
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
