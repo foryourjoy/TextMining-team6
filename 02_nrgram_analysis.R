@@ -6,7 +6,7 @@ library(ggplot2)
 #### Load data
 load("apple.RData")
 apple_df
-load("Microsoft.RData")
+load("microsoft.RData")
 microsoft_df <- df
 load("dell.RData")
 dell_df <- dell
