@@ -56,7 +56,7 @@ head(cleaned_apple)
 
 apple_final <- paste(cleaned_apple, collapse = " ")
 apple_df <- data.frame(company = "apple", text = apple_final, stringsAsFactors = FALSE)
-save(apple_df, file = "apple.RData")
+save(apple_df, file = "./preprocessed_RData/apple.RData")
 
 
 
@@ -103,7 +103,7 @@ head(cleaned_ms)
 
 ms_final <- paste(ms, collapse = " ")
 microsoft_df <- data.frame(company = "microsoft", text = ms_final, stringsAsFactors = FALSE)
-save(microsoft_df, file = "microsoft.RData")
+save(microsoft_df, file = "./preprocessed_RData/microsoft.RData")
 
 
 
@@ -151,7 +151,7 @@ head(cleaned_ms)
   
 dell_final <- paste(dell, collapse = " ")
 dell_df <- data.frame(company = "dell", text = dell_final, stringsAsFactors = FALSE)
-save(dell_df, file = "dell.RData")
+save(dell_df, file = "./preprocessed_RData/dell.RData")
 
 
 
