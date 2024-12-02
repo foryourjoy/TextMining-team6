@@ -4,12 +4,12 @@ library(RWeka)
 library(ggplot2)
 
 #### Load data
-load("apple.RData")
+load("./preprocessed_RData/apple.RData")
 apple_df
-load("microsoft.RData")
-microsoft_df <- df
-load("dell.RData")
-dell_df <- dell
+load("./preprocessed_RData/microsoft.RData")
+microsoft_df
+load("./preprocessed_RData/dell.RData")
+dell_df
 
 
 #### Making N-grams function

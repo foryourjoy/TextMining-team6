@@ -101,7 +101,7 @@ cleaned_ms <- cleaned_ms %>% str_remove_all(pattern_ms)
 head(cleaned_ms)
 
 
-ms_final <- paste(ms, collapse = " ")
+ms_final <- paste(cleaned_ms, collapse = " ")
 microsoft_df <- data.frame(company = "microsoft", text = ms_final, stringsAsFactors = FALSE)
 save(microsoft_df, file = "./preprocessed_RData/microsoft.RData")
 
@@ -147,9 +147,9 @@ clean_text_vector_dell <- function(text_vector) {
 pattern_dell <- "technology intro plan goal dashboard advance sustainability cultivate inclusion transform life ethic privacy supply chain number esg report"
 cleaned_dell <- clean_text_vector_dell(dell)
 cleaned_dell <- cleaned_dell %>% str_remove_all(pattern_dell)
-head(cleaned_ms)
+head(cleaned_dell)
   
-dell_final <- paste(dell, collapse = " ")
+dell_final <- paste(cleaned_dell, collapse = " ")
 dell_df <- data.frame(company = "dell", text = dell_final, stringsAsFactors = FALSE)
 save(dell_df, file = "./preprocessed_RData/dell.RData")
 
