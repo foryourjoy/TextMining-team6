@@ -71,7 +71,7 @@ pattern_ms <- "overview sustainability customer sustainability global sustainabi
 
 ms_stopwords <- c(
   stopwords::stopwords("en", source = "nltk"),  
-  c("microsoft", "appendix")
+  c("microsoft", "appendix", "fy")
 )
 
 stopword_pattern_ms <- paste0("\\b(", paste(ms_stopwords, collapse = "|"), ")\\b")
@@ -119,6 +119,7 @@ dell_stopwords <- c(
   stopwords::stopwords("en", source = "nltk"),  
   c("fy","dell","appendix","cy","will")
 )
+pattern_dell <- "technology intro plan goal dashboard advance sustainability cultivate inclusion transform life ethic privacy supply chain number esg report"
 
 stopword_pattern_dell <- paste0("\\b(", paste(dell_stopwords, collapse = "|"), ")\\b")
 
@@ -144,7 +145,7 @@ clean_text_vector_dell <- function(text_vector) {
     lemmatize_strings()
 }
 
-pattern_dell <- "technology intro plan goal dashboard advance sustainability cultivate inclusion transform life ethic privacy supply chain number esg report"
+
 cleaned_dell <- clean_text_vector_dell(dell)
 cleaned_dell <- cleaned_dell %>% str_remove_all(pattern_dell)
 head(cleaned_dell)
@@ -152,8 +153,6 @@ head(cleaned_dell)
 dell_final <- paste(cleaned_dell, collapse = " ")
 dell_df <- data.frame(company = "dell", text = dell_final, stringsAsFactors = FALSE)
 save(dell_df, file = "./preprocessed_RData/dell.RData")
-
-
 
 
 
