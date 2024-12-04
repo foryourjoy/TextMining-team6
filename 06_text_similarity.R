@@ -5,7 +5,7 @@ library(stringr)
 library(proxy)
 library(tm)
 
-load("dtm.RData")
+load("preprocessed_RData/dtm.RData")
 
 doc.cos <-
   dtm %>%

@@ -18,6 +18,7 @@ Team members:
 ├── preprocessed_RData
 │   ├── apple.RData
 │   ├── dell.RData
+    ├── dtm.RData
 │   └── microsoft.RData
 │
 └── sustainability_report
@@ -32,7 +33,11 @@ Team members:
    - 기업별 esg 등급과 점수  
 
 2. `preprocessed_RData/`  
-   - Apple, Dell, Microsoft 각 회사의 sustainability report를 전처리한 데이터
+   - `apple.RData`: Apple 2022 sustainability report를 전처리한 데이터
+   - `dell.RData`: Dell 2022 sustainability report를 전처리한 데이터
+   - `microsoft.RData`: Microsoft 2022 sustainability report를 전처리한 데이터
+   - `dtm.RData`: TF-IDF, topic modeling, text similarity, word cloud 분석에 사용되는 Document Term Matrix
+     - each document 는 각 회사 (Apple, Dell, Microsoft), 총 3개 document
 
 3. `sustainability_report/`  
    - apple-2022.pdf: [Apple 2022 sustainability report](https://www.apple.com/pl/environment/pdf/Apple_Environmental_Progress_Report_2022.pdf)  

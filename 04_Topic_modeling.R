@@ -6,7 +6,7 @@ library(tm)
 library(ldatuning)
 
 
-load("dtm.RData")
+load("preprocessed_RData/dtm.RData")
 
 dtm %>% inspect()
 
