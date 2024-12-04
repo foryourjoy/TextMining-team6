@@ -6,6 +6,7 @@ mlruns
 catboost_info
 
 .Rhistory
+.Rapp.history
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
