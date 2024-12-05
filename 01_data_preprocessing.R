@@ -80,8 +80,6 @@ clean_text_vector_ms <- function(text_vector) {
   text_vector %>%
     # Convert to lowercase
     str_to_lower() %>%
-    # Remove combined stop words
-    str_remove_all(stopword_pattern_ms) %>%
     # Remove punctuation
     str_replace_all("[[:punct:]]", "") %>%
     str_remove_all("[\\+\\$\\|]+") %>%
@@ -92,6 +90,8 @@ clean_text_vector_ms <- function(text_vector) {
     # Replace multiple spaces with a single space
     str_squish() %>%
     # Lemmatize strings
+    # Remove combined stop words
+    str_remove_all(stopword_pattern_ms) %>%
     lemmatize_strings()
 }
 
