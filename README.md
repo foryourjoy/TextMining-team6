@@ -3,7 +3,7 @@
 ## Topic: ESG 등급에 따른 기업 sustainability report 차이 분석
 Team members: 
 - Yunyoung choi
-- 나희
+- Nahee Park
 - 서진
   
 ---
@@ -76,6 +76,8 @@ library(stringr)
 library(tm)
 library(stopwords)
 library(textstem)
+library(ldatuning)
+library(topicmodels)
 
 ```
 
