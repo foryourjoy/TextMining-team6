@@ -134,6 +134,7 @@ clean_text_vector_dell <- function(text_vector) {
     # Remove combined stop words
     # Remove punctuation
     str_replace_all("[[:punct:]]", "") %>%
+    str_remove_all("[\\+\\$\\|]+") %>%
     # Remove non-printable characters
     str_replace_all("[^\\x20-\\x7E]", " ") %>%
     # Remove numbers
