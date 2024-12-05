@@ -1,10 +1,10 @@
 # TextMining-team6
 
-## Topic: ESG 등급에 따른 기업 sustainability report 차이 분석
+## Analysis of Differences in Corporate Sustainability Reports Based on ESG Ratings
 Team members: 
-- Yunyoung choi
-- Nahee Park
-- 서진
+- Yunyoung choi (Life Science & AI)
+- Nahee Park (Management & AI)
+- Seojin Lee (Management & AI)
   
 ---
 
@@ -18,7 +18,7 @@ Team members:
 ├── preprocessed_RData
 │   ├── apple.RData
 │   ├── dell.RData
-    ├── dtm.RData
+│   ├── dtm.RData
 │   └── microsoft.RData
 │
 └── sustainability_report
@@ -30,14 +30,15 @@ Team members:
      
 
 1. `esg_grade_analysis/esg_grade_data.csv`   
-   - 기업별 esg 등급과 점수  
+   - ESG ratings and scores by company 
 
 2. `preprocessed_RData/`  
-   - `apple.RData`: Apple 2022 sustainability report를 전처리한 데이터
-   - `dell.RData`: Dell 2022 sustainability report를 전처리한 데이터
-   - `microsoft.RData`: Microsoft 2022 sustainability report를 전처리한 데이터
-   - `dtm.RData`: TF-IDF, topic modeling, text similarity, word cloud 분석에 사용되는 Document Term Matrix
-     - each document 는 각 회사 (Apple, Dell, Microsoft), 총 3개 document
+   - `apple.RData`: Preprocessed data from Apple's 2022 sustainability report
+   - `dell.RData`: Preprocessed data from Dell's 2022 sustainability report
+   - `microsoft.RData`: Preprocessed data from Microsoft's 2022 sustainability report
+
+   - `dtm.RData`: Document Term Matrix used for TF-IDF, topic modeling, text similarity, and word cloud analyses
+     - Each document corresponds to one company (Apple, Dell, Microsoft):  total 3 documents.
 
 3. `sustainability_report/`  
    - apple-2022.pdf: [Apple 2022 sustainability report](https://www.apple.com/pl/environment/pdf/Apple_Environmental_Progress_Report_2022.pdf)  
@@ -46,7 +47,7 @@ Team members:
 
    - microsoft-2022.pdf: [Microsoft 2022 sustainability report](https://news.microsoft.com/wp-content/uploads/prod/sites/42/2023/05/2022-Environmental-Sustainability-Report.pdf)   
 
-  
+
 
 ### Code
 #### Files
@@ -61,11 +62,43 @@ Team members:
 ```
 
 #### Results
-- n-gram analysis 
-- TF-IDF
-- Topic Modeling
-- Word Cloud
-- Text Similarity
+<h5>n-gram analysis</h5>
+<ul>
+  <li>Microsoft</li>
+  <img src="images/ms_nrams.png" alt="Microsoft n-gram Analysis Results" width="600" height="300">
+  <li>Dell</li>
+  <img src="images/dell_ngrams.png" alt="Dell n-gram Analysis Results" width="600" height="300">
+  <li>Apple</li>
+  <img src="images/apple_ngram20.png" alt="Apple n-gram Analysis Results" width="600" height="300">
+</ul>
+
+<h5>TF-IDF</h5>
+<ul>
+  <li>Microsoft</li>
+  <img src="images/ms_tfidf.png" alt="Microsoft TF-IDF" width="400" height="300">
+  <li>Dell</li>
+  <img src="images/dell_tfidf.png" alt="Dell TF-IDF" width="400" height="300">
+  <li>Apple</li>
+  <img src="images/apple_tfidf.png" alt="Apple TF-IDF" width="400" height="300">
+</ul>
+
+<h5>Topic Modeling</h5>
+<img src="images/topic_modeling_result.png" alt="Topic Modeling Result" width="500" height="200">
+
+<h5>Word Cloud</h5>
+<ul>
+  <li>Microsoft</li>
+  <img src="images/ms_wc.png" alt="Microsoft Word Cloud" width="200" height="200">
+  <li>Dell</li>
+  <img src="images/dell_wc.png" alt="Dell Word Cloud" width="200" height="200">
+  <li>Apple</li>
+  <img src="images/apple_wc.png" alt="Apple Word Cloud" width="200" height="200">
+</ul>
+
+<h5>Text Similarity</h5>
+<img src="images/text_similarity.png" alt="Text Similarity" width="400" height="100">
+
+
 
 
 #### Required Packages
@@ -78,9 +111,6 @@ library(stopwords)
 library(textstem)
 library(ldatuning)
 library(topicmodels)
-
+library(tidytext)
+library(wordcloud)
 ```
-
----
-
-#### Conclusion

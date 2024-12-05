@@ -115,55 +115,33 @@ dtm_tfidf.mat.df %>% filter(doc == "dell") %>%
   head(20)
 
 
-############################
-###### Topic modeling ###### 
-############################
+### Visualize
+library(ggplot2)
 
-library(ldatuning)
-
-dtm %>% inspect()
-
-# Find the best number of topics
-dtm %>% 
-  FindTopicsNumber(topics = seq(from=2, to=30, by=6),
-                   metrics = c("Griffiths2004", "CaoJuan2009", "Arun2010","Deveaud2014"),
-                   method = "Gibbs",
-                   control = list(seed=1009)) %>% 
-  FindTopicsNumber_plot()
+dtm_tfidf.mat.df %>% filter(doc == "microsoft") %>% 
+  arrange(desc(tfidf)) %>%
+  head(20) %>% 
+  ggplot(aes(x = reorder(word, tfidf), y = tfidf)) +
+  geom_col(fill = "darkgreen") +
+  coord_flip() +
+  labs(x = "word", y = "tfidf", title = "Microsoft") +
+  theme_minimal()
 
 
-dtm %>% 
-  FindTopicsNumber(topics = seq(from=2, to=14, by=3),
-                   metrics = c("Griffiths2004", "CaoJuan2009", "Arun2010","Deveaud2014"),
-                   method = "Gibbs",
-                   control = list(seed=1009)) %>% 
-  FindTopicsNumber_plot()
+dtm_tfidf.mat.df %>% filter(doc == "apple") %>% 
+  arrange(desc(tfidf)) %>%
+  head(20) %>% 
+  ggplot(aes(x = reorder(word, tfidf), y = tfidf)) +
+  geom_col(fill = "darkgreen") +
+  coord_flip() +
+  labs(x = "word", y = "tfidf", title = "Apple") +
+  theme_minimal()
 
-
-
-dtm %>% 
-  FindTopicsNumber(topics = seq(from=2, to=8, by=1),
-                   metrics = c("Griffiths2004", "CaoJuan2009", "Arun2010","Deveaud2014"),
-                   method = "Gibbs",
-                   control = list(seed=1009)) %>% 
-  FindTopicsNumber_plot()
-
-
-library(topicmodels)
-
-dtm.lda.6 <-
-  dtm %>% 
-  LDA(control = list(seed = 1009), k=6)
-
-dtm.lda.6 %>% terms(10)
-
-###### CTM
-
-dtm.ctm.6 <-
-  dtm %>% 
-  CTM(control = list(seed = 1009), k=6)
-
-
-dtm.ctm.6 %>% terms(10)
-
-
+dtm_tfidf.mat.df %>% filter(doc == "dell") %>% 
+  arrange(desc(tfidf)) %>%
+  head(20) %>% 
+  ggplot(aes(x = reorder(word, tfidf), y = tfidf)) +
+  geom_col(fill = "darkgreen") +
+  coord_flip() +
+  labs(x = "word", y = "tfidf", title = "Dell") +
+  theme_minimal()
