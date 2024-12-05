@@ -88,11 +88,11 @@ Team members:
 <h5>Word Cloud</h5>
 <ul>
   <li>Microsoft</li>
-  <img src="images/ms_wc.png" alt="Microsoft Word Cloud" width="200" height="200">
+  <img src="images/ms_wc.png" alt="Microsoft Word Cloud" width="300" height="300">
   <li>Dell</li>
-  <img src="images/dell_wc.png" alt="Dell Word Cloud" width="200" height="200">
+  <img src="images/dell_wc.png" alt="Dell Word Cloud" width="300" height="300">
   <li>Apple</li>
-  <img src="images/apple_wc.png" alt="Apple Word Cloud" width="200" height="200">
+  <img src="images/apple_wc.png" alt="Apple Word Cloud" width="300" height="300">
 </ul>
 
 <h5>Text Similarity</h5>
